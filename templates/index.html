@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content_title %}{% endblock %}
+{% block header %}{% endblock %}
+{% block content %}        
+
+            <h2>Notes</h2>
+
+            {% if articles %}
+            <table class="table">
+                <tbody>
+                {% for article in articles_page.object_list %}        
+                    <tr>
+                    <td><time datetime="{{ article.date.isoformat() }}" itemprop="datePublished">{{ article.locale_date }}</time><td>
+                    <td><a href='{{ SITEURL }}/{{ article.url }}'>{{ article.title }}</a></td>
+                    </tr>
+                {% endfor %} 
+                </tbody>
+            </table>
+{% include 'pagination.html' %}
+{% endif %} 
+{% endblock content %}

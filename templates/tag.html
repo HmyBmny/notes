@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block description %}All posts which refer to tag {{ tag }}{% endblock %}
+{% block title %}{{ tag }} — {{ SITENAME }}{% endblock %}
+{% block header %}{% endblock %}
+{% block content %}
+
+            <h2>Tag <small>{{tag}}</small></h2>
+
+            <table class="table">
+                <tbody>
+                {% for article in articles %}
+                    <tr>
+                    <td>{{ article.locale_date }}</td>
+                    <td><a href='{{ SITEURL }}/{{ article.url }}'>{{ article.title }}</a></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            <a href="{{ SITEURL }}/">{{ BACK_TAG }}</a>
+{% endblock %}
+{% block footer %}{% endblock %}

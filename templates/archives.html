@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block description %}The archives page, find old stuff organized by date.{% endblock %}
+{% block title %}Archive — {{ SITENAME }}{% endblock %}
+{% block header %}{% endblock %}
+{% block content %}
+
+            <h2>Archives</h2>
+
+            <table class="table">
+                <tbody>
+                {% for article in dates %}
+                    <tr>
+                    <td>{{ article.locale_date }}</td>
+                    <td><a href='{{ SITEURL }}/{{ article.url }}'>{{ article.title }}</a></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            <a href="{{ SITEURL }}/">{{ BACK_TAG }}</a>
+{% endblock %}
+{% block footer %}{% endblock %}
