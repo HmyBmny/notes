@@ -4,18 +4,14 @@
 {% block content %}        
 
             <h2>Notes</h2>
+            <hr />
 
-            {% if articles %}
-            <table class="table">
-                <tbody>
+{% if articles %}
+                <ul>
                 {% for article in articles_page.object_list %}        
-                    <tr>
-                    <td><time datetime="{{ article.date.isoformat() }}" itemprop="datePublished">{{ article.locale_date }}</time><td>
-                    <td><a href='{{ SITEURL }}/{{ article.url }}'>{{ article.title }}</a></td>
-                    </tr>
+                    <li><a href='{{ SITEURL }}/{{ article.url }}'>{{ article.title }}</a></li><br />
                 {% endfor %} 
-                </tbody>
-            </table>
+                </ul>
 {% include 'pagination.html' %}
 {% endif %} 
 {% endblock content %}
