@@ -1,19 +1,21 @@
 {% extends "base.html" %}
 {% block description %}All posts which refer to category {{ category }}{% endblock %}
 {% block title %}{{ category }} — {{ SITENAME }}{% endblock %}
-{% block header %}{% endblock %}
-{% block content %}
-            <h2>Category <small>{{category}}</small></h2>
-            <table class="table">
-                <tbody>
-                {% for article in articles %}
-                    <tr>
-                    <td>{{ article.locale_date }}</td>
-                    <td><a href='{{ SITEURL }}/{{ article.url }}'>{{ article.title }}</a></td>
-                    </tr>
-                {% endfor %}
-                </tbody>
-            </table>
-            <a href="{{ SITEURL }}/">{{ BACK_TAG }}</a>
+{% block header %}
+        <h2>Category <small>{{category}}</small>
+        </h2>
 {% endblock %}
-{% block footer %}{% endblock %}
+{% block content %}
+
+        <table>
+            <tbody>
+            {% for article in articles %}
+                <tr>
+                <td>{{ article.locale_date }}</td>
+                <td><a href='{{ SITEURL }}/{{ article.url }}'>{{ article.title }}</a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <a href="{{ SITEURL }}/">{{ BACK_TAG }}</a>
+{% endblock %}

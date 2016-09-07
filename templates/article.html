@@ -1,40 +1,37 @@
 {% extends "base.html" %}
 {% block description %}Title: {{ article.title }}; Date: {{ article.date|strftime('%Y-%m-%d') }}; Author: {{ article.author }}{% endblock %}
 {% block title %}{{ article.title }} — {{ SITENAME }}{% endblock %}
-{% block header %}{% endblock %}
+{% block header %}
+        <h3>{{ article.title }}</h3>
+{% endblock %}
 {% block content %}
 
-            <div class="article" itemscope itemtype="http://schema.org/BlogPosting">
-                <div class="text-left">
-                    <h3 itemprop="name headline" class="article-title">{{ article.title }}</h3>
-                </div>
-                <a href="{{ SITEURL }}/">{{ BACK_TAG }}</a>
-                <div itemprop="articleBody" class="article-body">
-                    {{ article.content }}
-                </div>
-                {% if article.category %}
-                <div>
-                    Category:
-                    <span itemprop="articleSection">
-                        <a href="{{ SITEURL }}/{{ article.category.url }}" rel="category">{{ article.category }}</a>
-                    </span>
-                </div>
-                {% endif %}
-                {% if article.tags %} 
-                <div>
-                    Tags:
-                    {% for tag in article.tags %}
-                    <span itemprop="keywords">
-                        <a href="{{ SITEURL }}/{{ tag.url }}" rel="tag">{{ tag }}</a>
-                    </span>
-                    {% endfor %}
-                </div>
-                {% endif %}
-                <hr />
-                <h2>Comments</h2>
-                {% include "twitter.html" %}
-                {% include 'disqus.html' %}
-                {% include 'comments.html' %}
+        <div>
+            <a href="{{ SITEURL }}/">{{ BACK_TAG }}</a>
+            <div>
+                {{ article.content }}
             </div>
+            {% if article.category %}
+            <div>
+                Category:
+                <span>
+                    <a href="{{ SITEURL }}/{{ article.category.url }}" rel="category">{{ article.category }}</a>
+                </span>
+            </div>
+            {% endif %}
+            {% if article.tags %} 
+            <div>
+                Tags:
+                {% for tag in article.tags %}
+                <span>
+                    <a href="{{ SITEURL }}/{{ tag.url }}" rel="tag">{{ tag }}</a>
+                </span>
+                {% endfor %}
+            </div>
+            {% endif %}
+            <h4>Comments</h4>
+            {% include "twitter.html" %}
+            {% include 'disqus.html' %}
+            {% include 'comments.html' %}
+        </div>
 {% endblock %}
-{% block footer %}{% endblock %}

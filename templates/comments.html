@@ -1,6 +1,6 @@
     {% if GITHUB_REPO and article.issueid %}
-                Want to leave a comment? Visit <a href="https://github.com/{{ GITHUB_REPO }}/issues/{{article.issueid}}" target="_blank"> this post's issue page on GitHub</a> (you'll need a GitHub account.)
-                <div id="comments"></div>
+            Want to leave a comment? Visit <a href="https://github.com/{{ GITHUB_REPO }}/issues/{{article.issueid}}" target="_blank"> this post's issue page on GitHub</a> (you'll need a GitHub account.)
+            <div id="comments"></div>
 <script type="text/javascript">
 document.addEventListener("DOMContentLoaded", function(event) {
   function loadComments(data) {
@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
       var cavatarlink = data[i].user.avatar_url;
       var options = { year: 'numeric', month: 'short', day: 'numeric', hour:'2-digit', minute:'2-digit', timeZoneName:'short' };
       var cdate = new Date(data[i].created_at).toLocaleString("{{ DEFAULT_LANG }}", options);
-      $("#comments").append("<hr /><div><a href=\""+ cuserlink +'\"><img src="' + cavatarlink + '" width="20" height="20">' + "</a> &nbsp; <a href=\""+ cuserlink + "\">" + cuser + "</a> &nbsp; commented on &nbsp;<a href=\"" + clink + "\">" + cdate + "</a>" + "<p>" + cbody + " </p></div>");
+      $("#comments").append("<div id='comment'><a href=\""+ cuserlink +'\"><img src="' + cavatarlink + '" width="20" height="20">' + "</a> &nbsp; <a href=\""+ cuserlink + "\">" + cuser + "</a> &nbsp; commented on &nbsp;<a href=\"" + clink + "\">" + cdate + "</a>" + "<p>" + cbody + " </p></div>");
     }
   }
   $.ajax("https://api.github.com/repos/{{ GITHUB_REPO }}/issues/{{article.issueid}}/comments", {

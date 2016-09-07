@@ -34,12 +34,22 @@ ul.tagcloud .list-group-item <span>.badge {
 }
 </style>
 {% endblock %}
-{% block header %}{% endblock %}
+{% block header %} 
+        <h2>
+            <small>
+                <a href="{{ SITEURL }}/">Notes</a>
+                |
+                <a href="{{ SITEURL }}/{{ ARCHIVES_URI }}">Archives</a>
+                |
+                <a href="{{ SITEURL }}/{{ CATEGORIES_URI }}">Categories</a>
+                |
+                Tags
+            </small>
+        </h2>
+{% endblock %}
 {% block content %}
 
-            <h2>Tags</h2>
-
-            <div class="text-center">
+            <div>
             <ul class="tagcloud">
                 {% for tag in tag_cloud %}
                     <li class="tag-{{ tag.1 }}">
@@ -53,6 +63,4 @@ ul.tagcloud .list-group-item <span>.badge {
                 {% endfor %}
             </ul>
             </div>
-            <a href="{{ SITEURL }}/">{{ BACK_TAG }}</a>
 {% endblock %}
-{% block footer %}{% endblock %}

@@ -3,9 +3,8 @@
 {% block title %}{{ page.title }} — {{ SITENAME }} {% endblock %}
 {% block header %}{% endblock %}
 {% block content %}        
-            <section id="content" class="body">    
+            <section>    
                 {{ page.content }}
             </section>
-<a href="{{ SITEURL }}/">{{ BACK_TAG }}</a>
+            <a href="{{ SITEURL }}/">{{ BACK_TAG }}</a>
 {% endblock %}
-{% block footer %}{% endblock %}
