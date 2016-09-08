@@ -20,19 +20,22 @@
         <div id="main">
             {% block content %}{% endblock %}
         </div>
-        <div class="footer">
-            <p>Original articles on this site are CC <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode'>BY-NC-SA</a> licensed unless otherwise stated.</p>
+        {% block footer %}
+        <div id="footer">
+            <p>
+                <a href="{{ SITEURL }}/about">About</a>
+                |
+                <a href="https://github.com/HmyBmny">GitHub</a>
+                .
+            </p>
             <p>
                 Design by
                 <a href="mailto:me@hmybmny.com">HmyBmny</a>
                 .
             </p>
-            <p>
-                <a href="{{ SITEURL }}/pages/about.html">About</a>
-                |
-                <a href="https://github.com/HmyBmny">GitHub</a>
-            </p>
+            <p>Original articles on this site are CC <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode'>BY-NC-SA</a> licensed unless otherwise stated.</p>
         </div>
+        {% endblock %}
     </div>
 <!-- JavaScript -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
