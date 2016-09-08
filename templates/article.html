@@ -3,7 +3,9 @@
 {% block title %}{{ article.title }} — {{ SITENAME }}{% endblock %}
 {% block header %}
         <div id="header">
-            <h2>{{ article.title }}</h2>
+            <h2>
+                <small>{{ article.title }}</small>
+            </h2>
         </div>
 {% endblock %}
 {% block content %}
