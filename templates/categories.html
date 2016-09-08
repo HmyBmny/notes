@@ -2,21 +2,24 @@
 {% block description %}The Categories page lists all categories used to classify the posts. Each post is categorized by a category helping readers find out easily what they are looking for.{% endblock %}
 {% block title %}Categories — {{ SITENAME }}{% endblock %}
 {% block header %}
-        <h2>
-            <small>
-                <a href="{{ SITEURL }}/">Notes</a>
-                |
-                <a href="{{ SITEURL }}/{{ ARCHIVES_URI }}">Archives</a>
-                |
-                Categories
-                |
-                <a href="{{ SITEURL }}/{{ TAGS_URI }}">Tags</a>
-            </small>
-        </h2>
+        <div id="header">
+            <h2>
+                <small>
+                    <a href="{{ SITEURL }}/">Notes</a>
+                    |
+                    <a href="{{ SITEURL }}/{{ ARCHIVES_URI }}">Archives</a>
+                    |
+                    Categories
+                    |
+                    <a href="{{ SITEURL }}/{{ TAGS_URI }}">Tags</a>
+                </small>
+            </h2>
+        </div>
 {% endblock %}
 {% block content %}
-
-        {% for category, articles in categories %}
-            <p><a href="{{ SITEURL }}/{{ category.url }}">{{ category }}</p>
-        {% endfor %}
+            <div id="content">
+            {% for category, articles in categories %}
+                <p><a href="{{ SITEURL }}/{{ category.url }}">{{ category }}</a></p>
+            {% endfor %}
+            </div>
 {% endblock %}

@@ -1,24 +1,27 @@
 {% extends "base.html" %}
 {% block content_title %}{% endblock %}
 {% block header %}
-        <h2>
-            <small>
-                Notes
-                |
-                <a href="{{ SITEURL }}/{{ ARCHIVES_URI }}">Archives</a>
-                |
-                <a href="{{ SITEURL }}/{{ CATEGORIES_URI }}">Categories</a>
-                |
-                <a href="{{ SITEURL }}/{{ TAGS_URI }}">Tags</a>
-            </small>
-        </h2>
+        <div id="header">
+            <h2>
+                <small>
+                    Notes
+                    |
+                    <a href="{{ SITEURL }}/{{ ARCHIVES_URI }}">Archives</a>
+                    |
+                    <a href="{{ SITEURL }}/{{ CATEGORIES_URI }}">Categories</a>
+                    |
+                    <a href="{{ SITEURL }}/{{ TAGS_URI }}">Tags</a>
+                </small>
+            </h2>
+        </div>
 {% endblock %}
 {% block content %}        
-
+            <div id="content">
 {% if articles %}
             {% for article in articles_page.object_list %}        
                 <p><a href='{{ SITEURL }}/{{ article.url }}'>{{ article.title }}</a></p>
             {% endfor %} 
 {% include 'pagination.html' %}
 {% endif %} 
+            </div>
 {% endblock content %}

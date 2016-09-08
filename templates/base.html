@@ -10,38 +10,32 @@
 	{% block head %}{% endblock %}
 </head>
 <body>
-<div>
-	<div id="header">
-    {% block header %}
-        <h1>{{ SITENAME }}</h1>
-        <p>{{ SITESUBTITLE }}</p>
-    {% endblock %}
-	</div>
-	<div id="main">
-        {% block content %}{% endblock %}
-	</div>
-</div>
-<div class="footer">
-    <p>Original articles on this site are CC <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode'>BY-NC-SA</a> licensed unless otherwise stated.</p>
-    <p>
-        Created using
-        <a href="http://getpelican.com">Pelican</a>
-        .
-    </p>
-    <p>
-        Design by
-        <a href="mailto:me@hmybmny.com">HmyBmny</a>
-        .
-    </p>
-    <p>
-        <a href="{{ SITEURL }}/pages/about.html">About</a>
-        |
-        <a href="https://github.com/HmyBmny">GitHub</a>
-    </p>
-</div>
+    <div id="container">
+        {% block header %}
+        <div id="header">
+            <h1>{{ SITENAME }}</h1>
+            <p>{{ SITESUBTITLE }}</p>
+        </div>
+        {% endblock %}
+        <div id="main">
+            {% block content %}{% endblock %}
+        </div>
+        <div class="footer">
+            <p>Original articles on this site are CC <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode'>BY-NC-SA</a> licensed unless otherwise stated.</p>
+            <p>
+                Design by
+                <a href="mailto:me@hmybmny.com">HmyBmny</a>
+                .
+            </p>
+            <p>
+                <a href="{{ SITEURL }}/pages/about.html">About</a>
+                |
+                <a href="https://github.com/HmyBmny">GitHub</a>
+            </p>
+        </div>
+    </div>
 <!-- JavaScript -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
 {% include "analytics.html" %}
 {% include "github.html" %} 
 </body>

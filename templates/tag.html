@@ -2,19 +2,19 @@
 {% block description %}All posts which refer to tag {{ tag }}{% endblock %}
 {% block title %}{{ tag }} — {{ SITENAME }}{% endblock %}
 {% block header %}
+        <div id="header">
             <h2>Tag <small>{{tag}}</small></h2>
+        </div>
 {% endblock %}
 {% block content %}
-
-            <table>
-                <tbody>
+            <div id="content">
                 {% for article in articles %}
-                    <tr>
-                    <td>{{ article.locale_date }}</td>
-                    <td><a href='{{ SITEURL }}/{{ article.url }}'>{{ article.title }}</a></td>
-                    </tr>
+                <p>
+                    <span>{{ article.locale_date }}</span>
+                    <a href='{{ SITEURL }}/{{ article.url }}'>{{ article.title }}</a>
+                </p>
                 {% endfor %}
-                </tbody>
-            </table>
+            <br />
             <a href="{{ SITEURL }}/">{{ BACK_TAG }}</a>
+            </div>
 {% endblock %}
