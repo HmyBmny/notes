@@ -24,7 +24,7 @@ issueid: 1
 ...
 ```
 
-你可以访问 [netease-cloud-music](http://www.hmybmny.com/posts/linux/2016/Jun/01/netease-cloud-music/) 查看 GitHub issues 作为评论系统的具体效果。
+你可以访问 [netease-cloud-music](https://hmybmny.github.io/2016/06/netease-cloud-music/) 查看 GitHub issues 作为评论系统的具体效果。
 
 ![screenshot](screenshot.png)
 
