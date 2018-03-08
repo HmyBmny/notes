@@ -1,6 +1,6 @@
 # notes
 
-Pelican 主题，[Demo](http://www.hmybmny.com/)
+Pelican 主题
 
 通过简单地设置，你可以使用 GitHub issues 作为你的评论系统，只需要在 pelicanconf.py 中添加：
 
